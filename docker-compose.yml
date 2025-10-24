@@ -1,0 +1,20 @@
+services:
+  frontend:
+    image: geyasreer/frontend:v1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - tutedude-network
+
+  backend:
+    image: geyasreer/backend:v1
+    ports:
+      - "5000:5000"
+    networks:
+      - tutedude-network
+
+networks:
+  tutedude-network:
+    driver: bridge
