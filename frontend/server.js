@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/submit-form', async (req, res) => {
   try {
-    const response = await axios.post('http://<backend_private_ip>/process', req.body, {
+    const response = await axios.post('http://localhost:5000/process', req.body, {
       headers: { 'Content-Type': 'application/json' }
     });
     res.send(`<pre>${JSON.stringify(response.data, null, 2)}</pre>`);
